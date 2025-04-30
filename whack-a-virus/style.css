@@ -1,0 +1,181 @@
+/* base color variables for dark and light mode */
+:root 
+{
+    --bg-color:#f0f4f8;
+    --text-color:#222;
+    --hole-bg:#d4e3f5;
+    --card-bg:#fff;
+    --button-bg:#4CAF50;
+    --button-hover-bg:#45a049;
+    --timer-bg:#f8f8f8;
+  }
+  
+  /* body if dark mode is applied */
+  body.dark 
+  {
+    --bg-color:#121212;
+    --text-color:#e0e0e0;
+    --hole-bg:#333;
+    --card-bg:#1e1e1e;
+    --button-bg:#c9baba;
+    --button-hover-bg:#444;
+    --timer-bg:#333;
+  }
+  
+  /* main body */
+  body 
+  {
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:var(--bg-color);
+    color:var(--text-color);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    flex-direction:column;
+  }
+  /* main screen */
+  .screen 
+  {
+    display:none;
+    text-align:center;
+    width:90%;
+    max-width:600px;
+  }
+  
+
+  .screen.active 
+  {
+    display:block;
+  }
+  
+  h1 
+  {
+    font-size:2.5em;
+    margin-bottom:20px;
+  }
+  
+  /* levels buttons */
+  .level-buttons button 
+  {
+    margin:10px;
+    padding:12px 20px;
+    font-size:1.1em;
+    cursor:pointer;
+    background:var(--button-bg);
+    border:none;
+    border-radius:5px;
+    transition:background 0.3s;
+  }
+  /* hover effects  */
+  .level-buttons button:hover 
+  {
+    background:var(--button-hover-bg);
+  }
+  /* toggle */
+  .toggle 
+  {
+    display:inline-block;
+    margin-top:20px;
+    position:relative;
+  }
+  
+  .toggle input 
+  {
+    display:none;
+  }
+  /* slider */
+  .toggle .slider 
+  {
+    position:relative;
+    width:60px;
+    height:30px;
+    background:#ccc;
+    border-radius:30px;
+    display:inline-block;
+    vertical-align:middle;
+    cursor:pointer;
+  }
+  
+  .toggle .slider::before 
+  {
+    content:'';
+    position:absolute;
+    top:3px;
+    left:3px;
+    width:24px;
+    height:24px;
+    background:#fff;
+    border-radius:50%;
+    transition:0.3s;
+  }
+  
+  .toggle input:checked + .slider::before 
+  {
+    transform:translateX(30px);
+  }
+  /* main scoreboard */
+  .scoreboard 
+  {
+    display:flex;
+    justify-content:space-around;
+    background:var(--card-bg);
+    border-radius:10px;
+    padding:15px;
+    margin:20px 0;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    font-size:1.1em;
+  }
+  
+  /* game grid */
+  .game-grid 
+  {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin:20px 0;
+  }
+  /* main holes */
+  .hole 
+  {
+    background:var(--hole-bg);
+    border-radius:10px;
+    height:100px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 3px 6px rgba(0,0,0,0.15);
+  }
+  
+  /* virus indentation */
+  .virus 
+  {
+    width:100px;
+    position:absolute;
+    top:auto;
+    left:auto;
+    transform:translateX(-50%);
+    animation:popIn 0.5s ease-out forwards;
+    cursor:pointer;
+  }
+  
+  @keyframes popIn 
+  {
+    0% 
+    {
+      bottom:-70px;
+    }
+    100% 
+    {
+      bottom:0;
+    }
+  }
+  
+  button:disabled 
+  {
+    background:#aaa;
+    cursor:not-allowed;
+  }
+  
+
+  /* END  */

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Whack-a-Virus </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro screen with game info -->
+  <div id="introScreen" class="screen active">
+    <h1>🦠 Whack-a-Virus</h1>
+    <p> Select a difficulty: </p>
+    <!-- Buttons -->
+    <div class="level-buttons">
+      <button onclick="startGame('easy')"> Easy </button>
+      <button onclick="startGame('medium')"> Medium </button>
+      <button onclick="startGame('hard')"> Hard </button>
+    </div>
+
+    <!-- dark or light mode toggler -->
+    <label class="toggle">
+      <input type="checkbox" id="darkModeToggle" />
+      <span class="slider"></span> Dark Mode
+    </label>
+    <label class="toggle-sound">
+      <input type="checkbox" id="soundToggle" checked />
+      <span class="slider"></span> Sound
+    </label>
+  </div>
+
+  <!-- game screen -->
+  <div id="gameScreen" class="screen">
+    <div class="scoreboard">
+      <div>Score : <span id="score"> 0 </span></div>
+      <div>Time : <span id="timer"> 30 </span>s</div>  <!-- can be adjusted as per needed -->
+      <div>High Score : <span id="highScore">0</span></div>
+    </div>
+    <div class="game-grid">
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+    </div>
+    <button onclick="resetGame()"> Quit to Menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- END -->
